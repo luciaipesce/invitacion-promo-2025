@@ -1,0 +1,577 @@
+:root {
+    --bg-dark: #050505;
+    --bg-darker: #020203;
+    --bg-light: #111111;
+    --gold: #d4af37;
+    --gold-soft: #f0d98a;
+    --text: #f5f5f5;
+    --muted: #c0c0c0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* FONDO GENERAL + TIPOGRAFÍA */
+
+body {
+    font-family: "Montserrat", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    color: var(--text);
+    background: linear-gradient(
+        to bottom,
+        #020203 0%,
+        #090909 10%,
+        #1a1203 25%,
+        #c8a84d 35%,   /* dorado suave */
+        #d4af37 50%,   /* dorado pleno */
+        #c8a84d 65%,   /* dorado suave */
+        #1a1203 75%,
+        #090909 90%,
+        #020203 100%
+);
+    background-attachment: fixed;
+    background-size: 100% 300%;
+    background-repeat: no-repeat;
+}
+
+/* SECCIONES GENERALES */
+
+.section {
+    padding: 4rem 1.5rem;
+}
+
+/* si no querés que estas secciones tapen el degradado, podés comentar estos backgrounds */
+.section-dark {
+    background: radial-gradient(circle at top, #1a1a1a 0, #050505 45%, #020203 100%);
+}
+
+.section-light {
+    background: #050505;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 0.75rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 2rem;
+    font-size: 1.3rem;
+}
+
+/* HERO */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* capa que oscurece la foto del héroe */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(2px);
+    z-index: 0;
+}
+
+.hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: grayscale(0.3) brightness(0.8);
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+}
+
+.hero-bg.visible {
+    opacity: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), rgba(0,0,0,.9));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    max-width: 700px;
+    padding: 0 1.5rem;
+}
+
+.hero-small {
+    margin-top: 1rem;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.hero-title {
+    font-family: "Playfair Display", serif;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+    line-height: 1.1;
+    font-size: clamp(3rem, 8vw, 4rem);
+}
+
+.hero-title span {
+    color: var(--gold);
+}
+
+.hero-text {
+    margin-top: 1.2rem;
+    color: var(--muted);
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+}
+
+/* scroll indicator */
+
+.scroll-indicator {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2.5rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+.scroll-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--gold-soft);
+}
+
+.scroll-line {
+    margin-top: 0.4rem;
+    width: 2px;
+    height: 70px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+    animation: scrollLine 1.6s infinite;
+}
+
+@keyframes scrollLine {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(15px); opacity: 0; }
+}
+
+/* COUNTDOWN */
+
+.section-countdown {
+    position: relative;
+    z-index: 0;
+    padding: 9rem 1.5rem;
+}
+
+/* halo dorado detrás del card, SIN blur y por debajo del contenido */
+.section-countdown::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(212,175,55,0.25),
+        rgba(212,175,55,0.1)
+    );
+    z-index: -1;
+    pointer-events: none;
+}
+
+.countdown-card {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2.8rem 1.8rem 3rem;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(212, 175, 55, 0.6);
+    background: radial-gradient(circle at top,
+                #191919 0,
+                #070707 55%,
+                #020203 100%);
+    box-shadow: 0 18px 45px rgba(0, 0, 0, 0.85);
+}
+
+.section-countdown .section-title {
+    font-size: 2.2rem;
+    letter-spacing: 0.18em;
+}
+
+.section-countdown .section-subtitle {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* cajitas del contador */
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.time-box {
+    width: 80px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0.75rem 0;
+    border-radius: 0.9rem;
+    text-align: center;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(212, 175, 55, 0.55);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.9);
+}
+
+.time-box span {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.time-box small {
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+
+/* BOTONES */
+
+.btn-primary {
+    display: block;                       /* se vuelve un bloque */
+    width: fit-content;                   /* el ancho se adapta al texto */
+    margin: 2rem auto 0 auto;             /* CENTRADO horizontalmente */
+
+    padding: 0.9rem 2.4rem;
+    border-radius: 999px;
+    border: none;
+
+    /* Estilo visual del botón */
+    background: linear-gradient(135deg, #d4af37, #f0d98a);
+    color: #000;
+    font-family: "Montserrat", system-ui, sans-serif;
+    font-weight: 700;                     /* más gruesito */
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+
+    /* SACAR subrayado del link */
+    text-decoration: none;
+
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+
+/* conservar color aunque ya se haya visitado */
+.btn-primary:visited {
+    color: #000;
+}
+
+/* HOVER solo en dispositivos con hover (PC, no celu) */
+@media (hover:hover) {
+    .btn-primary:hover {
+        transform: translateY(-1px) scale(1.03);
+        box-shadow: 0 0 18px rgba(212,175,55,0.8);
+        filter: brightness(1.05);
+    }
+}
+
+
+/* LUGAR & UBICACIÓN – FONDO TEXTURA + TRANSICIÓN SUAVE */
+
+.section-ubicacion {
+    position: relative;
+    padding: 4rem 1.5rem 6rem;
+    color: var(--text);
+    overflow: hidden;
+    background: transparent; /* para que no se meta el fondo de section-light */
+}
+
+/* Capa de fondo con la textura */
+.section-ubicacion::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("../assets/img/bg-ubicacion.jpg"); 
+    background-size: cover;
+    background-position: center ;
+    background-attachment: fixed;
+    opacity: 0.9;           
+    z-index: 0;
+}
+
+/* El contenido real de la sección por encima de todo eso */
+.section-ubicacion * {
+    position: relative;
+    z-index: 2;
+}
+
+/* MAPA GOOGLE – marco dorado bien visible */
+.map-wrapper {
+    position: relative;
+    margin-bottom: 1.5rem;
+
+    /* marco dorado */
+    padding: 1px;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, #d4af37, #f0d98a);
+
+    /* para que el mapa no se salga del marco */
+    overflow: hidden;
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 260px;
+    border: none;
+
+    /* redondeo interno para que siga la forma del marco */
+    border-radius: 0.9rem;
+    display: block;
+}
+
+/* FORM TEMA */
+
+.theme-form {
+    max-width: 500px;
+    margin: 0 auto 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+}
+
+.form-group input {
+    padding: 0.6rem 0.8rem;
+    border-radius: 0.6rem;
+    border: 1px solid #333;
+    background: rgba(0,0,0,0.6);
+    color: var(--text);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--gold);
+}
+
+.theme-message {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--gold-soft);
+}
+
+/* PLAYLIST */
+
+.playlist {
+    border-radius: 1rem;
+    border: 1px solid rgba(212,175,55,0.4);
+    padding: 1.5rem;
+    background: radial-gradient(circle at top, #181818 0, #050505 55%);
+}
+
+.playlist-title {
+    font-family: "Playfair Display", serif;
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+#playlist-list {
+    list-style: none;
+    margin-left: 0;
+}
+
+#playlist-list li {
+    padding: 0.3rem 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.08);
+    font-size: 0.9rem;
+}
+
+.playlist-note {
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
+    color: var(--muted);
+}
+
+/* MAPA MESAS */
+
+.mapa-mesas {
+    border-radius: 1.2rem;
+    border: 1px solid rgba(212,175,55,0.4);
+    padding: 1.5rem;
+    background: #050505;
+}
+
+.escenario,
+.pista {
+    text-align: center;
+    padding: 0.4rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid rgba(212,175,55,0.4);
+    font-size: 0.85rem;
+    margin-bottom: 0.6rem;
+}
+
+.pista {
+    margin-bottom: 1rem;
+}
+
+.columnas {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: start;
+    gap: 0.75rem;
+}
+
+.col-mesas {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    align-items: center;
+}
+
+.pasillo {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+.mesa {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(212,175,55,0.6);
+    background: transparent;
+    color: var(--text);
+    font-size: 0.75rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.mesa:hover,
+.mesa.activa {
+    background: radial-gradient(circle, var(--gold-soft) 0, var(--gold) 40%, #000 100%);
+    color: #000;
+    transform: scale(1.07);
+    box-shadow: 0 0 12px rgba(212,175,55,0.9);
+}
+
+.rincones {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+/* FRASE FINAL */
+
+.frase-final {
+    border-left: 3px solid var(--gold);
+    padding-left: 1rem;
+    font-style: italic;
+    max-width: 700px;
+}
+
+/* FOOTER */
+
+.footer {
+    text-align: center;
+    padding: 1.5rem 1rem 2.5rem;
+    font-size: 0.8rem;
+    background: #020203;
+    color: var(--muted);
+}
+
+.footer a {
+    color: var(--gold-soft);
+    text-decoration: underline;
+}
+
+/* RESPONSIVE */
+
+@media (min-width: 768px) {
+    .hero-title {
+        font-size: clamp(5rem, 4vw, 3.8rem);
+    }
+
+    .hero-small {
+        font-size: 0.9rem;
+    }
+
+    .scroll-line {
+        height: 90px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero-title {
+        font-size: 4.1rem;
+    }
+}
+
+/* SCROLLBAR PERSONALIZADA */
+/* Solo afecta a navegadores basados en WebKit (Chrome, Edge, Opera, Brave) */
+
+::-webkit-scrollbar {
+    width: 8px;              /* ancho de la barra vertical */
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;      /* fondo negro elegante */
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        to bottom,
+        #d4af37,
+        #c8a84d,
+        #7b5c1c
+    );
+    border-radius: 10px;
+    border: 2px solid #0a0a0a; /* deja efecto “embebido” */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+        to bottom,
+        #f0d98a,
+        #d4af37,
+        #a88432
+    );
+}
