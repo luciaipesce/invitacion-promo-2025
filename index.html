@@ -1,84 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
     <head>
-    <meta charset="UTF-8" />
-    <title>Promo 2025 – EESOPI 3002</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta charset="UTF-8" />
+        <title>Promo 2025 – EESOPI 3002</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Fuentes -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+        <!-- Fuentes -->
+        <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@300;400;600&display=swap"
+        rel="stylesheet"
+        />
 
-    <!-- AOS (animaciones al hacer scroll) -->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+        <!-- Símbolos -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
 
-    <link rel="stylesheet" href="css/style.css" />
+
+        <!-- AOS (animaciones al hacer scroll) -->
+        <link
+        rel="stylesheet"
+        href="https://unpkg.com/aos@next/dist/aos.css"
+        />
+
+        <link rel="stylesheet" href="css/style.css" />
     </head>
     <body>
+        <!-- Fondo oscuro del toast -->
+        <div id="toast-overlay" class="toast-overlay"></div>
 
-    <!-- PORTADA -->
-    <section class="section hero">
-    <div class="hero-bg hero-bg-1 visible" id="hero-bg-1"></div>
-    <div class="hero-bg hero-bg-2" id="hero-bg-2"></div>
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content" data-aos="fade-up">
-
-        <p class="hero-small">EESOPI 3002 · Fray Justo Santa María de Oro</p>
-
-        <h1 class="hero-title">PROMO <span>2025</span></h1>
-
-        <p class="hero-text">
-        Te invitamos a vivir con nosotros el cierre de una etapa llena de aprendizajes, risas y momentos inolvidables.  
-        Gracias por acompañarnos en este camino.
-        </p>
-
-        <div class="scroll-indicator">
-        <span class="scroll-text">Deslizá para Ver Más</span>
-        <span class="scroll-line"></span>
-        </div>
-    </div>
-    </section>
-
-    <!-- CUENTA REGRESIVA -->
-    <section id="cuenta" class="section section-countdown">
-    <div class="container">
-        <div class="countdown-card" data-aos="fade-up">
-
-        <h2 class="section-title">Cuenta regresiva</h2>
-        <p class="section-subtitle">
-            Sábado 13 de Diciembre de 2025 · 21:00 hs
-        </p>
-
-        <div class="countdown">
-            <div class="time-box">
-            <span id="days">00</span>
-            <small>Días</small>
-            </div>
-            <div class="time-box">
-            <span id="hours">00</span>
-            <small>Horas</small>
-            </div>
-            <div class="time-box">
-            <span id="minutes">00</span>
-            <small>Min</small>
-            </div>
-            <div class="time-box">
-            <span id="seconds">00</span>
-            <small>Seg</small>
-            </div>
+        <!-- Contenedor del mensaje -->
+        <div id="theme-message" class="theme-message">
+        <button class="toast-close" type="button">×</button>
+        <span class="toast-text"></span>
         </div>
 
-        </div>
-    </div>
-    </section>
+        <!-- ======================================= -->
+        <!-- 1) PORTADA / HERO                       -->
+        <!-- ======================================= -->
+        <section class="section hero">
+        <div class="hero-bg hero-bg-1 visible" id="hero-bg-1"></div>
+        <div class="hero-bg hero-bg-2" id="hero-bg-2"></div>
+        <div class="hero-overlay"></div>
 
-    <!-- LUGAR Y UBICACIÓN -->
-    <section id="lugar" class="section section-ubicacion">
+        <div class="hero-content" data-aos="fade-up">
+            <p class="hero-small">
+            EESOPI 3002 · Fray Justo Santa María de Oro
+            </p>
+
+            <h1 class="hero-title">PROMO <span>2025</span></h1>
+
+            <p class="hero-text">
+            Te invitamos a vivir con nosotros el cierre de una etapa llena de
+            aprendizajes, risas y momentos inolvidables.
+            </p>
+
+            <div class="scroll-indicator">
+            <span class="scroll-text">Deslizá para Ver Más</span>
+            <span class="scroll-line"></span>
+            </div>
+        </div>
+        </section>
+
+        <!-- ======================================= -->
+        <!-- 2) CUENTA REGRESIVA                     -->
+        <!-- ======================================= -->
+        <section id="cuenta" class="section section-countdown">
+        <div class="container">
+            <div class="countdown-card" data-aos="fade-up">
+            <h2 class="section-title">Cuenta regresiva</h2>
+            <p class="section-subtitle">
+                Sábado 13 de Diciembre de 2025 · 21:00 hs
+            </p>
+
+            <div class="countdown">
+                <div class="time-box">
+                <span id="days">00</span>
+                <small>Días</small>
+                </div>
+                <div class="time-box">
+                <span id="hours">00</span>
+                <small>Horas</small>
+                </div>
+                <div class="time-box">
+                <span id="minutes">00</span>
+                <small>Min</small>
+                </div>
+                <div class="time-box">
+                <span id="seconds">00</span>
+                <small>Seg</small>
+                </div>
+            </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- ======================================= -->
+        <!-- 3) LUGAR Y UBICACIÓN                    -->
+        <!-- ======================================= -->
+        <section id="lugar" class="section section-ubicacion">
         <div class="container" data-aos="fade-up">
-            <h2 class="section-title">Lugar & Ubicación</h2>
+            <h2 class="section-title">Lugar &amp; Ubicación</h2>
 
             <p class="section-subtitle">
-            Biblioteca Popular Rafael Rodolfo Priggioni<br>
+            Biblioteca Popular Rafael Rodolfo Priggioni<br />
             Rodolfo R. Priggioni 566 – Zenón Pereyra, Santa Fe
             </p>
 
@@ -86,153 +109,133 @@
             <!-- IFRAME DE GOOGLE MAPS -->
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3410.445632573636!2d-61.90235252452389!3d-31.56347837420693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95cadd5a8129f337%3A0x26db26d94a192d46!2sBiblioteca%20Popular%20Rafael%20Rodolfo%20Prigioni!5e0!3m2!1ses-419!2sar!4v1732650000000!5m2!1ses-419!2sar"
-                style="border:0;"
+                style="border: 0"
                 allowfullscreen=""
                 loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+                referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
             </div>
 
             <a
             href="https://www.google.com/maps/place/Biblioteca+Popular+Rafael+Rodolfo+Prigioni/@-31.5634784,-61.8997779,17z/data=!3m1!4b1!4m6!3m5!1s0x95cadd5a8129f337:0x26db26d94a192d46!8m2!3d-31.5634784!4d-61.8997779!16s%2Fg%2F11c5_97fgq?entry=ttu"
             target="_blank"
             rel="noopener noreferrer"
-            class="btn-primary">
+            class="btn-primary"
+            >
             Ver Ubicación
             </a>
         </div>
-    </section>
+        </section>
 
+        <!-- ======================================= -->
+        <!-- 4) MAPA DE MESAS                        -->
+        <!-- ======================================= -->
 
-    <!-- QUÉ TEMA QUERÉS ESCUCHAR -->
-    <section id="tema" class="section section-dark">
+        <!-- ======================================= -->
+        <!-- 5) ¿QUÉ TEMA QUERÉS ESCUCHAR?           -->
+        <!-- ======================================= -->
+        <section id="tema" class="section section-dark section-musica">
+        <!-- ⭐ Fondo de estrellas (solo decorativo) -->
+        <div class="stars-wrap" aria-hidden="true">
+            <div id="stars"></div>
+            <div id="stars2"></div>
+            <div id="stars3"></div>
+        </div>
+
         <div class="container" data-aos="fade-up">
-        <h2 class="section-title">¿Qué tema querés escuchar?</h2>
-        <p class="section-subtitle">
-            Dejanos alguna canción que te gustaría que suene en la fiesta.  
-            Vamos a armar una playlist con todos los temas sugeridos. 🎵
-        </p>
+            <h2 class="section-title">¿Qué tema querés escuchar?</h2>
+            <p class="section-subtitle">
+            Dejanos alguna canción que te gustaría que suene en la fiesta.
+            Vamos a armar una playlist con todos los temas sugeridos.
+            </p>
 
-        <form id="theme-form" class="theme-form">
-            <div class="form-group">
-            <label for="artista">Artista</label>
-            <input type="text" id="artista" name="artista" required />
-            </div>
-            <div class="form-group">
-            <label for="cancion">Nombre de la canción</label>
-            <input type="text" id="cancion" name="cancion" required />
-            </div>
-            <button type="submit" class="btn-primary">Enviar tema</button>
-            <p id="theme-message" class="theme-message"></p>
-        </form>
+            <div class="section-divider section-divider-musica"></div>
 
-        <div class="playlist" data-aos="fade-up" data-aos-delay="150">
-            <h3 class="playlist-title">Playlist sugerida</h3>
-            <ul id="playlist-list">
-            <!-- JS va a ir agregando <li> acá -->
+            <!-- FORM BUSCADOR SPOTIFY -->
+            <form id="theme-form" class="theme-form">
+            <div class="form-group form-group-buscador">
+                <label for="buscador">Seleccionar Tema</label>
+                <input
+                type="text"
+                id="buscador"
+                name="buscador"
+                autocomplete="off"
+                placeholder="Ingresá el Artista o el Nombre de la Canción que prefieras..."
+                required
+                />
+
+                <!-- resultados en vivo -->
+                <div id="spotify-results" class="spotify-results"></div>
+            </div>
+
+            <!-- campos ocultos que se llenan al elegir un tema -->
+            <input type="hidden" id="track-id" name="track-id" />
+            <input type="hidden" id="artista" name="artista" />
+            <input type="hidden" id="cancion" name="cancion" />
+
+            <button type="submit" class="btn-primary">
+                Agregar a la Playlist
+            </button>
+            </form>
+
+            <!-- PLAYLIST ESTILO TABLA -->
+            <div class="playlist" data-aos="fade-up" data-aos-delay="150">
+            <h3 class="playlist-title">Playlist</h3>
+
+            <div class="playlist-header">
+                <span>#</span>
+                <span>Canción</span>
+                <span>Artista</span>
+            </div>
+
+            <ul id="playlist-list" class="playlist-table">
+                <!-- JS llena las filas acá -->
             </ul>
-            <p class="playlist-note">
-            *Esta lista se puede exportar después para crear la playlist en Spotify, YouTube, etc.
+            </div>
+        </div>
+        </section>
+        <!-- FIN QUÉ TEMA QUERÉS ESCUCHAR -->
+
+        <!-- ======================================= -->
+        <!-- 6) FRASE FINAL                           -->
+        <!-- ======================================= -->
+        <section class="section section-dark">
+        <div class="container frase-final" data-aos="fade-up">
+            <p>
+            “Hoy cerramos una etapa que nos enseñó a crecer, a equivocarnos y a
+            volver a intentarlo. También, abrimos otra, llena de nuevos sueños,
+            esperanzas y proyectos. Gracias por ser parte de este viaje y por
+            compartir con nosotros un momento que, sin dudas, recordaremos para
+            siempre.”
             </p>
         </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- UBICACIÓN DE MESAS -->
-    <section id="mesas" class="section section-light">
-        <div class="container" data-aos="fade-up">
-        <h2 class="section-title">Ubicación de mesas</h2>
-        <p class="section-subtitle">
-            Usá este mapa como referencia al llegar al salón.  
-            Podés tocar cada mesa para resaltarla.
-        </p>
-
-        <div class="mapa-mesas">
-            <div class="escenario">Escenario · Egresados</div>
-            <div class="pista">Pista de baile</div>
-
-            <div class="columnas">
-            <!-- Columna izquierda -->
-            <div class="col-mesas">
-                <button class="mesa" data-num="35">35</button>
-                <button class="mesa" data-num="34">34</button>
-                <button class="mesa" data-num="32">32</button>
-                <button class="mesa" data-num="30">30</button>
-                <button class="mesa" data-num="28">28</button>
-                <button class="mesa" data-num="26">26</button>
-                <button class="mesa" data-num="24">24</button>
-                <button class="mesa" data-num="22">22</button>
-                <button class="mesa" data-num="21">21</button>
-                <button class="mesa" data-num="19">19</button>
-                <button class="mesa" data-num="18">18</button>
-                <button class="mesa" data-num="16">16</button>
-                <button class="mesa" data-num="14">14</button>
-                <button class="mesa" data-num="12">12</button>
-                <button class="mesa" data-num="10">10</button>
-                <button class="mesa" data-num="8">8</button>
-                <button class="mesa" data-num="6">6</button>
-                <button class="mesa" data-num="4">4</button>
-                <button class="mesa" data-num="2">2</button>
-            </div>
-
-            <div class="pasillo">Pasillo</div>
-
-            <!-- Columna derecha -->
-            <div class="col-mesas">
-                <button class="mesa" data-num="33">33</button>
-                <button class="mesa" data-num="31">31</button>
-                <button class="mesa" data-num="29">29</button>
-                <button class="mesa" data-num="27">27</button>
-                <button class="mesa" data-num="25">25</button>
-                <button class="mesa" data-num="23">23</button>
-                <button class="mesa" data-num="20">20</button>
-                <button class="mesa" data-num="17">17</button>
-                <button class="mesa" data-num="15">15</button>
-                <button class="mesa" data-num="13">13</button>
-                <button class="mesa" data-num="11">11</button>
-                <button class="mesa" data-num="9">9</button>
-                <button class="mesa" data-num="7">7</button>
-                <button class="mesa" data-num="5">5</button>
-                <button class="mesa" data-num="3">3</button>
-                <button class="mesa" data-num="1">1</button>
-            </div>
-            </div>
-
-            <div class="rincones">
-            <span>Rincón foto</span>
-            <span>Rincón foto</span>
-            </div>
-        </div>
-        </div>
-    </section>
-
-    <!-- FRASE FINAL -->
-    <section class="section section-dark">
-        <div class="container frase-final" data-aos="fade-up">
+        <!-- ======================================= -->
+        <!-- 7) FOOTER                                -->
+        <!-- ======================================= -->
+        <footer class="footer">
         <p>
-            “Hoy cerramos una etapa llena de aprendizajes, risas y desafíos.  
-            Gracias por acompañarnos en este camino y por ser parte de nuestra historia.”
-        </p>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <p>
-        Página creada por <strong>Lucía Pesce</strong> · Estudiante de Ingeniería en Sistemas de Información.
+            Página creada por <strong>Lucía Pesce</strong> · Estudiante de Ingeniería
+            en Sistemas de Información.
         </p>
         <p>
-        Si querés apoyar mi emprendimiento de cuadernos inteligentes:
-        <a href="https://www.instagram.com/kastux.cuadernos" target="_blank" rel="noopener noreferrer">
+            Si querés apoyar mi Emprendimiento de Cuadernos Inteligentes:
+            <a
+            href="https://www.instagram.com/kastux.cuadernos"
+            target="_blank"
+            rel="noopener noreferrer"
+            >
             @kastux.cuadernos
-        </a>
+            </a>
         </p>
-    </footer>
+        </footer>
 
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
+        <!-- Scripts -->
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
         AOS.init();
-    </script>
-    <script src="js/main.js"></script>
+        </script>
+        <script src="js/main.js"></script>
     </body>
 </html>
