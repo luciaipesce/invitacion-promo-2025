@@ -330,4 +330,14 @@ async function buscarEnSpotify(query) {
 // === Cargar playlist al abrir la página ===
 cargarTemasDesdeServidor();
 
+document.addEventListener('DOMContentLoaded', () => {
+    const mesas = document.querySelectorAll('.mesa');
+
+    mesas.forEach(mesa => {
+        mesa.addEventListener('click', () => {
+        // Alterna la clase de estado activo
+        mesa.classList.toggle('mesa-activa');
+        });
+    });
+});
 

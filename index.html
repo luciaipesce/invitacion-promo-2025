@@ -22,6 +22,7 @@
         />
 
         <link rel="stylesheet" href="css/style.css" />
+        <link rel="icon" type="image/png" href="assets/img/favicon.png" />
     </head>
     <body>
         <!-- Fondo oscuro del toast -->
@@ -130,6 +131,119 @@
         <!-- ======================================= -->
         <!-- 4) MAPA DE MESAS                        -->
         <!-- ======================================= -->
+        <section id="mesas" class="section section-mapa">
+            <div class="container" data-aos="fade-up">
+                <h2 class="section-title">Mapa de Mesas</h2>
+                <p class="section-subtitle">
+                    Usá este mapa como referencia al llegar al salón. Podés tocar cada mesa para resaltarla.
+                </p>
+
+            <div class="section-divider section-divider-musica"></div>
+
+                <div class="mapa-wrapper">
+                    <div class="mapa-card">
+                        <!-- BLOQUE SUPERIOR: DIAGONALES + ESCENARIO + PISTA + BAÑOS -->
+                        <div class="mapa-top">
+                            <!-- Diagonales izquierdas: 34 - 32 -->
+                            <div class="diag-column diag-left">
+                                <div class="diag-sup-left">
+                                    <button class="mesa" data-num="34">34</button>
+                                </div>
+                                <button class="mesa" data-num="32">32</button>
+                            </div>
+
+                            <!-- Escenario + pista de baile -->
+                            <div class="escenario-pista">
+                                <div class="escenario-bloque">
+                                    <div class="escenario-titulo">Escenario</div>
+                                    <div class="escenario-sub">Ubicación egresados</div>
+                                </div>
+
+                                <div class="pista-bloque">
+                                    <div class="pista-cuadricula">
+                                        <div class="pista-grid"></div>
+                                    </div>
+                                    <span class="pista-label">Pista de baile</span>
+                                </div>
+                            </div>
+
+                            <!-- Diagonales derechas + baños: 33 - 31 + WC -->
+                            <div class="diag-column diag-right">
+                                    <div class="diag-sup-right">
+                                        <button class="mesa" data-num="33">33</button>
+                                    </div>
+                                    <button class="mesa" data-num="31">31</button>
+                            </div>
+                        </div>
+
+                        <!-- BLOQUE CENTRAL: CUATRO COLUMNAS + PASILLO -->
+                        <div class="mapa-middle">
+                            <!-- Columna 1 izquierda: 30, 28, 26, 24, 22, 21, 19, 36 -->
+                            <div class="col-mesas">
+                                <button class="mesa" data-num="30">30</button>
+                                <button class="mesa" data-num="28">28</button>
+                                <button class="mesa" data-num="26">26</button>
+                                <button class="mesa" data-num="24">24</button>
+                                <button class="mesa" data-num="22">22</button>
+                                <button class="mesa" data-num="21">21</button>
+                                <button class="mesa" data-num="19">19</button>
+                                <button class="mesa" data-num="36">36</button>
+                            </div>
+
+                            <!-- Columna 2 izquierda: 16, 14, 12, 10, 8, 6, 4, 2 -->
+                            <div class="col-mesas">
+                                <button class="mesa" data-num="16">16</button>
+                                <button class="mesa" data-num="14">14</button>
+                                <button class="mesa" data-num="12">12</button>
+                                <button class="mesa" data-num="10">10</button>
+                                <button class="mesa" data-num="8">8</button>
+                                <button class="mesa" data-num="6">6</button>
+                                <button class="mesa" data-num="4">4</button>
+                                <button class="mesa" data-num="2">2</button>
+                            </div>
+
+                            <!-- Pasillo central -->
+                            <div class="pasillo-bloque">
+                                <span class="pasillo-linea"></span>
+                                <span class="pasillo-texto">Pasillo</span>
+                                <span class="pasillo-linea"></span>
+                            </div>
+
+                            <!-- Columna 1 derecha: 15, 13, 11, 9, 7, 5, 3, 1 -->
+                            <div class="col-mesas">
+                                <button class="mesa" data-num="15">15</button>
+                                <button class="mesa" data-num="13">13</button>
+                                <button class="mesa" data-num="11">11</button>
+                                <button class="mesa" data-num="9">9</button>
+                                <button class="mesa" data-num="7">7</button>
+                                <button class="mesa" data-num="5">5</button>
+                                <button class="mesa" data-num="3">3</button>
+                                <button class="mesa" data-num="1">1</button>
+                            </div>
+
+                            <!-- Columna 2 derecha: 29, 27, 25, 23, 35, 20, 18, 17 -->
+                            <div class="col-mesas">
+                                <button class="mesa" data-num="29">29</button>
+                                <button class="mesa" data-num="27">27</button>
+                                <button class="mesa" data-num="25">25</button>
+                                <button class="mesa" data-num="23">23</button>
+                                <button class="mesa" data-num="35">35</button>
+                                <button class="mesa" data-num="20">20</button>
+                                <button class="mesa" data-num="18">18</button>
+                                <button class="mesa" data-num="17">17</button>
+                            </div>
+                        </div>
+
+                        <!-- BLOQUE INFERIOR: RINCÓN FOTO + INGRESO + RINCÓN FOTO -->
+                        <div class="mapa-bottom">
+                            <div class="ingreso-bloque">
+                                <span class="ingreso-label">Ingreso al salón</span>
+                            </div>
+                        </div>
+                    </div><!-- fin .mapa-card -->
+                </div><!-- fin .mapa-wrapper -->
+            </div>
+        </section>
 
         <!-- ======================================= -->
         <!-- 5) ¿QUÉ TEMA QUERÉS ESCUCHAR?           -->
