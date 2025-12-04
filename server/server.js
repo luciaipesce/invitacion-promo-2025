@@ -276,6 +276,9 @@ app.get("/api/temas/export", async (req, res) => {
 // =======================
 //  Iniciar servidor HTTP
 // =======================
+const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
-    console.log(`✅ Servidor escuchando en http://localhost:${PORT}`);
+    console.log(`✅ Servidor escuchando en el puerto ${PORT}`);
 });
+
