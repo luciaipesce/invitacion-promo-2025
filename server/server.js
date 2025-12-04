@@ -8,7 +8,7 @@ const sql = require("mssql");
 require("dotenv").config(); // lee el .env
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(cors());
@@ -18,13 +18,13 @@ app.use(express.json()); // para leer JSON del body
 //  Config SQL Server
 // =======================
 const dbConfig = {
-    user: "playlist_user",
-    password: "Playlist2025!", // la que creaste en SQL Server
-    server: "KASTUX",          // mismo nombre que usás en SSMS
-    database: "Promo2025",
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    server: process.env.DB_SERVER,
+    database: process.env.DB_DATABASE,
     options: {
-        encrypt: false,              // en local no hace falta
-        trustServerCertificate: true
+        encrypt: process.env.DB_ENCRYPT === "true",
+        trustServerCertificate: process.env.DB_TRUST_SERVER_CERT === "true"
     }
 };
 
