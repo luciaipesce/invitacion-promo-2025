@@ -117,7 +117,10 @@ if (toastCloseBtn) {
 const form = document.getElementById("theme-form");
 const list = document.getElementById("playlist-list");
 
-const API_BASE = "promo2025-playlist-api-dyfadhg9fddfdsfc.brazilsouth-01.azurewebsites.net";
+const API_BASE =
+    window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1"
+    ? "http://localhost:3000"
+    : "https://promo2025-playlist-api-dyfadhg9fddfdsfc.brazilsouth-01.azurewebsites.net";
 const API_TEMAS_URL = `${API_BASE}/api/temas`;
 
 // Array en memoria con lo que venga de la base
