@@ -1427,6 +1427,97 @@ body {
     }
 }
 
+/* iOS (Safari / Chrome iPhone): sin parallax pero estable */
+@supports (-webkit-touch-callout: none) {
+    body {
+        background-attachment: scroll;
+    }
+
+    .section-ubicacion::before,
+    .section-mapa::before {
+        background-attachment: scroll;
+        background-position: center top;
+        background-size: cover;
+    }
+}
+
+/* Contador: evitar que el box de segundos se vaya a otra fila
+   en pantallas chicas (hasta ~iPhone grande) */
+@media (max-width: 480px) {
+    .countdown {
+        flex-wrap: nowrap;
+        gap: 0.4rem;
+    }
+
+    .time-box {
+        width: 60px;
+        padding: 0.5rem 0;
+    }
+
+    .time-box span {
+        font-size: 1.15rem;
+    }
+
+    .time-box small {
+        font-size: 0.65rem;
+    }
+}
+
+/* ----- Modo compacto ESPECIAL iPhone para el mapa de mesas ----- */
+@supports (-webkit-touch-callout: none) {
+    @media (max-width: 480px) {
+
+        /* Todo el plano un poquito más chico */
+        .mapa-card {
+            transform: scale(0.92);
+            transform-origin: top center;
+        }
+
+        /* Mesas más chiquitas y con más separación vertical */
+        .mesa {
+            width: 44px;
+            height: 44px;
+            font-size: 0.7rem;
+        }
+
+        .col-mesas {
+            gap: 1.4rem;
+        }
+
+        /* Diagonales más cerca y más abajo para no chocar con la pista */
+        .mapa-top {
+            column-gap: 0.4rem;
+            margin-bottom: 1.4rem;
+        }
+
+        .diag-sup-left,
+        .diag-sup-right {
+            margin-bottom: 1.8rem;
+            margin-left: 0.4rem;
+            margin-right: 0.4rem;
+        }
+
+        /* Pista un poco más pequeña para darle aire a las diagonales */
+        .pista-cuadricula {
+            max-width: 180px;
+        }
+
+        /* Texto "Escenario / Ubicación egresados" más compacto */
+        .escenario-bloque {
+            padding: 0.6rem 0.8rem;
+        }
+
+        .escenario-titulo {
+            font-size: 1rem;
+            letter-spacing: 0.12em;
+        }
+
+        .escenario-sub {
+            font-size: 0.65rem;
+        }
+    }
+}
+
 
 
 
