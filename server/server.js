@@ -9,6 +9,11 @@ require("dotenv").config(); // lee el .env
 
 const app = express();
 
+// Ruta básica para comprobar que la API está viva
+app.get("/", (req, res) => {
+    res.send("API Promo 2025 funcionando ✅");
+});
+
 // Middleware
 app.use(cors());
 app.use(express.json()); // para leer JSON del body
