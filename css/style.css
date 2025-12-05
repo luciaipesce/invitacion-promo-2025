@@ -1518,14 +1518,16 @@ body {
     }
 }
 
-/* Fix iPhone: evitar que PROMO 2025 se parta en 2 líneas */
+/* iPhone — PROMO 2025 más grande sin romperse */
 @supports (-webkit-touch-callout: none) {
     @media (max-width: 480px) {
         .hero-title {
             white-space: nowrap !important;
-            font-size: 2.1rem !important; /* un pelín más chico para que entre siempre */
-            line-height: 1.05 !important;
+            font-size: 2.45rem !important; /* más grande */
             letter-spacing: 0.07rem;
+            line-height: 1.03 !important; /* más compacto verticalmente */
+            display: inline-block;
+            transform: scale(1.02); /* un toque para darle presencia */
         }
     }
 }
