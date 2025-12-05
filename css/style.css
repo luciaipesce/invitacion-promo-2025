@@ -1319,4 +1319,82 @@ body {
     }
 }
 
+/* HERO: ajustar título en celu chico */
+@media (max-width: 430px) {
+    .hero-title {
+        white-space: nowrap;          /* que no corte entre PROMO y 2025 */
+        font-size: 2.2rem;            /* un poquito más chico para que entre */
+        letter-spacing: 0.08rem;
+        line-height: 1.05;
+    }
+}
+
+/* COUNTDOWN: compactar cajas en celu chico */
+@media (max-width: 430px) {
+    .countdown {
+        gap: 0.4rem;
+    }
+
+    .time-box {
+        width: 56px;
+        padding: 0.45rem 0;
+    }
+
+    .time-box span {
+        font-size: 1rem;
+    }
+
+    .time-box small {
+        font-size: 0.65rem;
+    }
+}
+
+/* Fondos con textura: que se vean más en móvil */
+@media (max-width: 768px) {
+    .section-ubicacion::before,
+    .section-mapa::before {
+        background-attachment: scroll;   /* en celu fixed falla */
+        background-position: center top;
+        background-size: cover;
+        opacity: 1;                      /* más contraste */
+    }
+}
+
+/* Escenario + pista mejor proporcionados en celu chico */
+@media (max-width: 430px) {
+    .escenario-bloque {
+        padding: 0.7rem 1rem;
+    }
+
+    .escenario-titulo {
+        font-size: 1.05rem;
+        letter-spacing: 0.12em;
+    }
+
+    .escenario-sub {
+        font-size: 0.7rem;
+    }
+
+    .pista-label {
+        font-size: 0.85rem;
+        letter-spacing: 0.12em;
+    }
+}
+
+/* Que la cuadrícula no se escape del marco dorado */
+.pista-cuadricula {
+    overflow: hidden;   /* recorta cualquier cosa que sobresalga */
+}
+
+/* Mesas diagonales un poco más separadas de la pista en celu chico */
+@media (max-width: 430px) {
+    .diag-sup-left,
+    .diag-sup-right {
+        margin-bottom: 3.2rem;  /* más espacio respecto del escenario/pista */
+    }
+}
+
+
+
+
 
