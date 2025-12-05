@@ -14,6 +14,10 @@
     box-sizing: border-box;
 }
 
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
 /* FONDO GENERAL + TIPOGRAFÍA */
 
 body {
@@ -1399,10 +1403,30 @@ body {
     }
 }
 
-body {
-    /* SOLO PARA PROBAR */
-    border-top: 5px solid red;
+/* Ajuste extra SOLO para iOS táctil en pantallas chicas */
+@supports (-webkit-touch-callout: none) {
+    @media (max-width: 480px) {
+        .mapa-card {
+            transform: scale(0.94);
+            transform-origin: top center;
+        }
+    }
 }
+
+@media (max-width: 430px) {
+    .section-countdown .section-subtitle {
+        font-size: 0.9rem;
+        line-height: 1.3;
+        padding-inline: 0.5rem;
+    }
+}
+
+@media (max-width: 370px) {
+    .section-countdown .section-subtitle {
+        font-size: 0.8rem;
+    }
+}
+
 
 
 
