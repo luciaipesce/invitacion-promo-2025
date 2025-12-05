@@ -31,9 +31,9 @@ body {
         #090909 90%,
         #020203 100%
     );
-    background-attachment: fixed;
     background-size: 100% 300%;
     background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 /* SECCIONES GENERALES */
@@ -327,9 +327,9 @@ body {
     background-image: url("../assets/img/bg-ubicacion.jpg");
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     opacity: 0.9;
     z-index: 0;
+    background-attachment: fixed;
 }
 
 .section-ubicacion * {
@@ -780,9 +780,9 @@ body {
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     filter: brightness(0.5);
     z-index: 0;
+    background-attachment: fixed;
 }
 
 .section-mapa > .container {
@@ -1168,7 +1168,6 @@ body {
 @media (max-width: 768px) {
     .section-ubicacion::before,
     .section-mapa::before {
-        background-attachment: scroll;   /* en celu fixed rompe */
         background-position: center top;
         background-size: cover;
         opacity: 0.85;                   /* un poquito más visible */
@@ -1269,79 +1268,21 @@ body {
     }
 }
 
-/* ===== Mapa de mesas en celu chico ===== */
-@media (max-width: 430px) {
-    .section-mapa {
-        padding: 3.2rem 1.1rem 3.8rem;
-    }
-
-    .mapa-card {
-        padding: 1.6rem 0.9rem 2.1rem;
-    }
-
-    .mapa-top {
-        column-gap: 0.6rem;
-        margin-bottom: 1.8rem;
-    }
-
-    .diag-sup-left,
-    .diag-sup-right {
-        margin-bottom: 2.6rem;
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
-    }
-
-    .mesa {
-        width: 46px;
-        height: 46px;
-        font-size: 0.75rem;
-    }
-
-    .col-mesas {
-        gap: 1.4rem;
-    }
-
-    .mapa-middle {
-        column-gap: 0.7rem;
-    }
-
-    .pista-cuadricula {
-        max-width: 190px;
-    }
-
-    .pasillo-linea {
-        height: 190px;
-    }
-
-    .ingreso-label {
-        font-size: 0.9rem;
-        letter-spacing: 0.16em;
-    }
-}
-
-/* HERO: ajustar título en celu chico */
-@media (max-width: 430px) {
-    .hero-title {
-        white-space: nowrap;          /* que no corte entre PROMO y 2025 */
-        font-size: 2.2rem;            /* un poquito más chico para que entre */
-        letter-spacing: 0.08rem;
-        line-height: 1.05;
-    }
-}
-
-/* COUNTDOWN: compactar cajas en celu chico */
-@media (max-width: 430px) {
+/* Contador: evitar que el box de segundos se vaya a otra fila
+   en pantallas muy angostas (≤ 400px) */
+@media (max-width: 400px) {
     .countdown {
+        flex-wrap: nowrap;
         gap: 0.4rem;
     }
 
     .time-box {
-        width: 56px;
-        padding: 0.45rem 0;
+        width: 60px;
+        padding: 0.5rem 0;
     }
 
     .time-box span {
-        font-size: 1rem;
+        font-size: 1.15rem;
     }
 
     .time-box small {
@@ -1349,21 +1290,21 @@ body {
     }
 }
 
-/* Fondos con textura: que se vean más en móvil */
-@media (max-width: 768px) {
-    .section-ubicacion::before,
-    .section-mapa::before {
-        background-attachment: scroll;   /* en celu fixed falla */
-        background-position: center top;
-        background-size: cover;
-        opacity: 1;                      /* más contraste */
+/* HERO: que "PROMO 2025" no se parta en 2 líneas */
+@media (max-width: 430px) {
+    .hero-title {
+        white-space: nowrap;
+        font-size: 2.3rem;
+        letter-spacing: 0.08rem;
+        line-height: 1.05;
     }
 }
 
-/* Escenario + pista mejor proporcionados en celu chico */
+/* Escenario + texto siempre dentro del recuadro en móviles */
 @media (max-width: 430px) {
     .escenario-bloque {
-        padding: 0.7rem 1rem;
+        max-width: 100%;
+        padding: 0.7rem 0.9rem;
     }
 
     .escenario-titulo {
@@ -1374,23 +1315,87 @@ body {
     .escenario-sub {
         font-size: 0.7rem;
     }
+}
 
-    .pista-label {
-        font-size: 0.85rem;
-        letter-spacing: 0.12em;
+/* Ajuste extra para anchos MUY chicos (tipo 360, 344, etc.) */
+@media (max-width: 370px) {
+    .escenario-titulo {
+        font-size: 0.95rem;
+    }
+
+    .escenario-sub {
+        font-size: 0.65rem;
     }
 }
 
-/* Que la cuadrícula no se escape del marco dorado */
+/* La cuadricula nunca se sale del marco dorado */
 .pista-cuadricula {
-    overflow: hidden;   /* recorta cualquier cosa que sobresalga */
+    overflow: hidden;
 }
 
-/* Mesas diagonales un poco más separadas de la pista en celu chico */
+/* Mapa de mesas en celu chico (hasta iPhone 14 Pro Max, XR, SE, Galaxy, etc.) */
 @media (max-width: 430px) {
+    .section-mapa {
+        padding: 3.2rem 1.1rem 3.8rem;
+    }
+
+    .mapa-card {
+        padding: 1.6rem 0.7rem 2.1rem;
+    }
+
+    .mapa-top {
+        column-gap: 0.4rem;
+        margin-bottom: 1.6rem;
+    }
+
+    /* Diagonales más cerca del borde y un poco más abajo
+       para no montarse con la pista */
     .diag-sup-left,
     .diag-sup-right {
-        margin-bottom: 3.2rem;  /* más espacio respecto del escenario/pista */
+        margin-bottom: 2.4rem;
+        margin-left: 0.2rem;
+        margin-right: 0.2rem;
+    }
+
+    /* Mesas más chicas para que entren las 4 columnas sin salirse */
+    .mesa {
+        width: 46px;
+        height: 46px;
+        font-size: 0.75rem;
+    }
+
+    .col-mesas {
+        gap: 1.3rem;
+    }
+
+    .mapa-middle {
+        column-gap: 0.4rem;
+    }
+
+    /* Pista un poco más compacta */
+    .pista-cuadricula {
+        max-width: 190px;
+    }
+
+    .pasillo-linea {
+        height: 190px;
+    }
+}
+
+/* Ajuste extra para anchos MUY angostos (Galaxy Z Fold, S8, etc.) */
+@media (max-width: 360px) {
+    .mesa {
+        width: 42px;
+        height: 42px;
+        font-size: 0.7rem;
+    }
+
+    .mapa-middle {
+        column-gap: 0.3rem;
+    }
+
+    .pista-cuadricula {
+        max-width: 170px;
     }
 }
 
